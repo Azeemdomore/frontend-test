@@ -1,5 +1,5 @@
 import { ICardData } from "@/interface";
-import { itemsData } from "@/mock/ItemsMockData";
+import { itemsData } from "@/mock/itemsMockData";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
