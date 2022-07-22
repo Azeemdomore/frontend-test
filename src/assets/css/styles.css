@@ -31,10 +31,3 @@
     padding: 7px 15px 7px 15px;
   }
 }
-.custom-file-input:hover::before {
-  border-color: #334155;
-}
-.custom-file-input:active::before {
-  background: #334155;
-  color: #fff;
-}

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const renderHomeCards = homeCards.map((item: ICardData, index: number) => {
     return (
       <React.Fragment key={`${item.id}${index}`}>
-        <div className="bg-secondary rounded-2xl flex flex-col items-start sm:p-3 border border-gray-600 shadow-xl w-[28rem] gap-3">
+        <div className="bg-secondary rounded-2xl flex flex-col items-start p-3 border border-gray-600 shadow-xl lg:w-[28rem] sm:w-[22rem] gap-3">
           <div className="flex items-center gap-5">
             <img src={item.cardImg} alt="" className="w-14 h-14 rounded-full" />
             <h2 className="text-xl text-white pb-1">{item.cardTitle}</h2>
@@ -23,12 +23,15 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div className="p-5 flex gap-5">
-        <div className="flex flex-wrap gap-5">{renderHomeCards}</div>
-        <div className="flex justify-end w-full absolute bottom-5 right-5">
+      <div className="flex">
+        <div className="flex md:justify-start justify-center flex-wrap gap-7 p-5">
+          {renderHomeCards}
+        </div>
+
+        <div className="flex justify-end w-full fixed bottom-5 right-5">
           <button
             onClick={() => setShowPopup(true)}
-            className="p-3 bg-[#334155] rounded-lg text-white w-40"
+            className="p-3 bg-[#334155] rounded-lg text-white w-40 z-50"
           >
             Add Item
           </button>
@@ -37,18 +40,18 @@ const Home: React.FC = () => {
           <>
             <div className="h-screen w-full bg-black opacity-70 absolute md:block hidden"></div>
             <div className="w-full h-full absolute flex justify-center items-center">
-              <div className="bg-secondary rounded-2xl flex flex-col sm:items-center sm:p-5 p-4 border border-gray-600 shadow-xl z-50 absolute md:h-[28rem] h-full sm:w-96 w-full">
+              <div className="bg-secondary rounded-2xl flex flex-col sm:items-center sm:p-5 p-4 border border-gray-500 shadow-xl z-50 absolute md:h-[28rem] h-full sm:w-96 w-full">
                 <div className="pb-3">
                   <p className="pb-1 text-gray-200">Title:</p>
                   <input
                     type="text"
-                    className="sm:w-80 w-full h-8 bg-transparent border rounded-md focus:outline-none focus:ring-0 border-gray-300 focus:border-[#334155] placeholder-gray-500 text-sm caret-white text-white"
+                    className="sm:w-80 w-full h-8 bg-transparent border rounded-md focus:outline-none focus:ring-0 border-gray-300 focus:border-gray-500 text-sm caret-white text-white"
                   />
                 </div>
                 <div className="pb-3">
                   <p className="pb-1 text-gray-200">Upload Image:</p>
                   <input
-                    className="cursor-pointer border rounded-md border-gray-300 focus:border-[#334155] custom-file-input sm:w-80 w-full text-sm text-gray-200"
+                    className="cursor-pointer border rounded-md border-gray-300 focus:border-gray-500 focus:outline-none focus:ring-0 custom-file-input sm:w-80 w-full text-sm text-gray-200"
                     aria-describedby="user_avatar_help"
                     id="user_avatar"
                     type="file"
@@ -59,7 +62,7 @@ const Home: React.FC = () => {
                   <textarea
                     name="text"
                     id=""
-                    className="sm:w-80 w-full rounded-md sm:h-40 h-32 resize-none focus:outline-none focus:ring-0 bg-transparent border-gray-300 focus:border-[#334155] caret-white text-gray-200"
+                    className="sm:w-80 w-full rounded-md sm:h-40 h-48 resize-none focus:outline-none focus:ring-0 bg-transparent border-gray-300 focus:border-gray-500 caret-white text-gray-200"
                     cols={30}
                   ></textarea>
                 </div>

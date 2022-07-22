@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "../components/Home";
 
-const Services: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <Home />
@@ -9,4 +9,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default HomePage;
