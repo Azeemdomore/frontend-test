@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const renderHomeCards = homeCards.map((item: ICardData, index: number) => {
     return (
       <React.Fragment key={`${item.id}${index}`}>
-        <div className="bg-secondary rounded-2xl flex flex-col items-start p-3 border border-gray-600 shadow-xl lg:w-[28rem] sm:w-[22rem] gap-3">
+        <div className="bg-secondary rounded-2xl flex flex-col items-start p-3 border border-gray-600 shadow-xl lg:w-[28rem] sm:w-[21rem] gap-3">
           <div className="flex items-center gap-5">
             <img src={item.cardImg} alt="" className="w-14 h-14 rounded-full" />
             <h2 className="text-xl text-white pb-1">{item.cardTitle}</h2>
